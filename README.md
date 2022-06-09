@@ -1,4 +1,4 @@
-git clone https://github.com/penan9/todolist3.git
+git clone https://github.com/penan9/todolist5.git
 
 (myVenv) 8:16:57:~/PycharmProjects/pythonTodo
 % docker build --no-cache -t mytododocker:latest .
@@ -9,6 +9,8 @@ to build docker compose:
 
 to run docker compose:
 % docker-compose up
+
+docker-compose down;docker image ls -q | xargs -I {} docker image rm -f {};docker-compose up --build
 
 to list out all todo list:
 1) curl --location --request GET 'http://localhost/todo?access_token=ya29.a0ARrdaM_bpzpN8vgANr4PLdFcnozwPz7BCX8JW7pkRDlIuohD-1K7YhhoSQ_YLr88YGLKYcpE-ZJfj0pSSqNbWA5zh5ZbXM1np91pi5ugMsKVpWn0aBfjGAJ3C8uX7ys7b6yX5KFRqKvGeo3qFNkRXkiKoYgD' \
@@ -68,6 +70,15 @@ To add a new todo list:
 {
     "id": 21
 }
+
+3) with 2 params:
+curl --location --request POST 'http://localhost/todo' \
+--header 'Authorization: Bearer ya29.a0ARrdaM-KutoyqtXJBqQJmS08Za0wQnb-qEevMEp3iqXvmRiyUemyuVSRS2QP6-_TBruQBwh4rXwiS1Qq7mpE72r59k7i27MWmzigQsIrAOBX0LZziOBtfp5QIeeg81ejAHZlm4sffJU290n1wDYweqNlwGGk' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "description": "test new 1",
+    "taskName": "task new 1"
+}'
 
 To delete a todo list:curl --location --request POST 'http://localhost/todo' \
 --header 'Authorization: Bearer ya29.a0ARrdaM_bpzpN8vgANr4PLdFcnozwPz7BCX8JW7pkRDlIuohD-1K7YhhoSQ_YLr88YGLKYcpE-ZJfj0pSSqNbWA5zh5ZbXM1np91pi5ugMsKVpWn0aBfjGAJ3C8uX7ys7b6yX5KFRqKvGeo3qFNkRXkiKoYgD' \

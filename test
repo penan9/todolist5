@@ -1,0 +1,13 @@
+ya29.a0ARrdaM_n3mpABD_YTnsFU4ViLGhQI0N-AF_y6lFyI8J2ekfYz43cAtVNpS_dOMk0YZqPJu-cnOcl8qlnuj3jEgpfJOdqeaDIG9nyXXQ6EU7xcGyObQBD4POemlfOQ1eGQOXZY6mcXpmJuwBCH-HkcI1rnyRO
+
+
+
+curl --location --request POST 'http://localhost/todo' \
+--header 'Authorization: Bearer ya29.a0ARrdaM-KutoyqtXJBqQJmS08Za0wQnb-qEevMEp3iqXvmRiyUemyuVSRS2QP6-_TBruQBwh4rXwiS1Qq7mpE72r59k7i27MWmzigQsIrAOBX0LZziOBtfp5QIeeg81ejAHZlm4sffJU290n1wDYweqNlwGGk' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "description": "test new 1",
+    "taskName": "task new 1"
+}'
+
+docker-compose down;docker image ls -q | xargs -I {} docker image rm -f {};docker-compose up --build
